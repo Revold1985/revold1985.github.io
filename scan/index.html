@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Secure QR Share</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #0f0f14;
+      color: #fff;
+      font-family: -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 24px;
+      padding: 40px 32px;
+      max-width: 380px;
+      width: 100%;
+      text-align: center;
+    }
+    .icon {
+      width: 72px;
+      height: 72px;
+      background: rgba(108,99,255,0.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      font-size: 32px;
+    }
+    h1 { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
+    p  { font-size: 15px; color: rgba(255,255,255,0.5); line-height: 1.5; margin-bottom: 32px; }
+    .btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #6c63ff, #3b82f6);
+      color: #fff;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 600;
+      padding: 16px 32px;
+      border-radius: 16px;
+      width: 100%;
+    }
+    .btn:active { opacity: 0.85; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="icon">🔒</div>
+    <h1>Secure QR Share</h1>
+    <p>You've scanned a secure QR code. Install the Secure QR Share app to decrypt it.</p>
+    <a class="btn" id="store-btn" href="#">Get Secure QR Share</a>
+  </div>
+
+  <script>
+    // TODO: replace with real Play Store / App Store URLs when published
+    var playStore = 'https://play.google.com/store/apps/details?id=com.example.secureqrshare';
+    var appStore  = 'https://apps.apple.com/app/TODO';
+
+    var ua = navigator.userAgent || '';
+    var btn = document.getElementById('store-btn');
+    if (/android/i.test(ua)) {
+      btn.href = playStore;
+    } else if (/iphone|ipad|ipod/i.test(ua)) {
+      btn.href = appStore;
+    } else {
+      // Desktop fallback — just link to Play Store
+      btn.href = playStore;
+    }
+  </script>
+</body>
+</html>
