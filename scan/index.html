@@ -66,6 +66,13 @@
     .btn-copied  { background: #059669; }
     .btn-install { background: linear-gradient(135deg, #6c63ff, #3b82f6); text-decoration: none; display: block; }
     .btn:active  { opacity: 0.85; }
+    .divider {
+      display: flex; align-items: center; gap: 12px;
+      margin: 20px 0; color: rgba(255,255,255,0.2); font-size: 13px;
+    }
+    .divider::before, .divider::after {
+      content: ''; flex: 1; height: 1px; background: rgba(255,255,255,0.08);
+    }
   </style>
 </head>
 <body>
@@ -75,6 +82,7 @@
     <p id="subtitle">You've scanned a secure QR code. Install the Secure QR Share app to decrypt it.</p>
     <div id="text-box" class="text-box" style="display:none"></div>
     <button id="copy-btn" class="btn btn-copy" style="display:none" onclick="copyText()">Copy to Clipboard</button>
+    <div id="divider" class="divider" style="display:none">also</div>
     <a id="store-btn" class="btn btn-install" href="#">Get Secure QR Share</a>
   </div>
 
@@ -116,6 +124,8 @@
         box.onclick = copyText;
 
         document.getElementById('copy-btn').style.display = 'block';
+        document.getElementById('divider').style.display = 'flex';
+        document.getElementById('store-btn').style.display = 'block';
 
         // Try auto-copy (works if page was opened by user gesture like scanning)
         if (navigator.clipboard && navigator.clipboard.writeText) {
