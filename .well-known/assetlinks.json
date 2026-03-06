@@ -1,16 +1,5 @@
 [
   {
-    "relation": ["delegate_permission/common.handle_all_urls"],
-    "target": {
-      "namespace": "android_app",
-      "package_name": "com.revold1985.secureqrshare",
-      "sha256_cert_fingerprints": [
-        "27:65:89:FC:7A:D9:4D:47:DB:EE:75:E4:BE:B9:A3:5E:44:E8:4F:5B:BE:2D:B5:2B:6B:40:4A:42:62:46:BD:F9"
-      ]
-    }
-  }
-],
-  {
     "relation": [
       "delegate_permission/common.handle_all_urls",
       "delegate_permission/common.get_login_creds"
