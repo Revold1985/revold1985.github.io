@@ -66,6 +66,12 @@
     .btn-copied  { background: #059669; }
     .btn-install { background: linear-gradient(135deg, #6c63ff, #3b82f6); text-decoration: none; display: block; }
     .btn:active  { opacity: 0.85; }
+    .kofi {
+      margin-top: 24px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.3);
+    }
+    .kofi a { color: rgba(255,255,255,0.4); text-decoration: underline; }
     .divider {
       display: flex; align-items: center; gap: 12px;
       margin: 20px 0; color: rgba(255,255,255,0.2); font-size: 13px;
@@ -84,6 +90,7 @@
     <button id="copy-btn" class="btn btn-copy" style="display:none" onclick="copyText()">Copy to Clipboard</button>
     <div id="divider" class="divider" style="display:none">also</div>
     <a id="store-btn" class="btn btn-install" href="#">Get Secure QR Share</a>
+    <p class="kofi">☕ Enjoying the app? <a href="https://ko-fi.com/revold1985" target="_blank">Support the developer</a></p>
   </div>
 
   <script>
